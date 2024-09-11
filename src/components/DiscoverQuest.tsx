@@ -4,17 +4,21 @@ import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { DashedStroke } from "@/components/ui/dashed-stroke";
 
 const destinations = [
-  { name: "Bali", image: "/bali.jpg", link: "/destinations/bali" },
-  { name: "Lombok", image: "/lombok.jpg", link: "/destinations/lombok" },
+  { name: "Bali", image: "/public/bali.jpg", link: "/destinations/bali" },
+  { name: "Lombok", image: "/public/lombok.jpg", link: "/destinations/lombok" },
   {
     name: "Raja Ampat",
-    image: "/raja-ampat.jpg",
+    image: "/public/raja-ampat.jpg",
     link: "/destinations/raja-ampat",
   },
-  { name: "Komodo Island", image: "/komodo.jpg", link: "/destinations/komodo" },
+  {
+    name: "Komodo Island",
+    image: "/public/komodo.jpg",
+    link: "/destinations/komodo",
+  },
   {
     name: "Nusa Penida",
-    image: "/nusa-penida.jpg",
+    image: "/public/nusa-penida.jpg",
     link: "/destinations/nusa-penida",
   },
 ];

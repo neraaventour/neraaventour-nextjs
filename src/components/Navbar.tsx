@@ -8,11 +8,11 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 bg-white shadow-sm">
+    <nav className="sticky top-0 bg-white shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Left links */}
-          <div className="hidden md:flex space-x-4 flex-1 justify-end mr-6">
+          <div className="hidden md:flex space-x-8 flex-1 justify-end mr-[10rem]">
             <NavLink href="/about">About us</NavLink>
             <NavLink href="/adventure">Adventure</NavLink>
           </div>
@@ -20,12 +20,12 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center mx-6">
             <Link href="/" className="flex items-center">
-              <Image src="/favicon.ico" alt="Logo" width={32} height={32} />
+              <Image src="/icon.ico" alt="Logo" width={60} height={60} />
             </Link>
           </div>
 
           {/* Right links */}
-          <div className="hidden md:flex space-x-4 flex-1 ml-6">
+          <div className="hidden md:flex space-x-8 flex-1 ml-[10rem]">
             <NavLink href="/logbook">Logbook</NavLink>
             <NavLink href="/contact">Contact us</NavLink>
           </div>
@@ -59,12 +59,20 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden">
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-md overflow-hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <MobileNavLink href="/about">About us</MobileNavLink>
-            <MobileNavLink href="/adventure">Adventure</MobileNavLink>
-            <MobileNavLink href="/logbook">Logbook</MobileNavLink>
-            <MobileNavLink href="/contact">Contact us</MobileNavLink>
+            <MobileNavLink href="/about" delay="delay-[100ms]">
+              About us
+            </MobileNavLink>
+            <MobileNavLink href="/adventure" delay="delay-[200ms]">
+              Adventure
+            </MobileNavLink>
+            <MobileNavLink href="/logbook" delay="delay-[300ms]">
+              Logbook
+            </MobileNavLink>
+            <MobileNavLink href="/contact" delay="delay-[400ms]">
+              Contact us
+            </MobileNavLink>
           </div>
         </div>
       )}
@@ -81,7 +89,7 @@ const NavLink = ({
 }) => (
   <Link
     href={href}
-    className="inline-flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition duration-150 ease-in-out"
+    className="inline-flex items-center px-4 py-3 rounded-md text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition duration-150 ease-in-out"
   >
     {children}
   </Link>
@@ -90,13 +98,15 @@ const NavLink = ({
 const MobileNavLink = ({
   href,
   children,
+  delay,
 }: {
   href: string;
   children: React.ReactNode;
+  delay: string;
 }) => (
   <Link
     href={href}
-    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+    className={`block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 animate-slideDown ${delay}`}
   >
     {children}
   </Link>
