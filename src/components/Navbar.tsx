@@ -1,18 +1,38 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const visible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
+
+      setPrevScrollPos(currentScrollPos);
+      setVisible(visible);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
 
   return (
-    <nav className="sticky top-0 bg-white shadow-sm z-50">
+    <nav
+      className={`sticky top-0 bg-white shadow-sm z-50 transition-transform duration-300 ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Left links */}
-          <div className="hidden md:flex space-x-8 flex-1 justify-end mr-[10rem]">
+          <div className="hidden md:flex space-x-6 flex-1 justify-end mr-10">
             <NavLink href="/about">About us</NavLink>
             <NavLink href="/adventure">Adventure</NavLink>
           </div>
@@ -25,7 +45,7 @@ const Navbar = () => {
           </div>
 
           {/* Right links */}
-          <div className="hidden md:flex space-x-8 flex-1 ml-[10rem]">
+          <div className="hidden md:flex space-x-6 flex-1 ml-10">
             <NavLink href="/logbook">Logbook</NavLink>
             <NavLink href="/contact">Contact us</NavLink>
           </div>
