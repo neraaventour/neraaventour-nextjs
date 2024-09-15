@@ -49,7 +49,7 @@ const OurMission = () => {
             <div className="flex justify-center md:justify-start">
               <Link
                 href="/about"
-                className="inline-block bg-primary text-white font-semibold py-3 px-12 rounded-lg hover:bg-slate-700 transition duration-300"
+                className="inline-block bg-[#4A96D0] text-white font-semibold py-3 px-12 rounded-lg hover:bg-[#3A45A2] transition duration-300"
               >
                 About Us
               </Link>

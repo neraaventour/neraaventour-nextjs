@@ -4,7 +4,7 @@ import referral from "../app/public/referral.jpg";
 const Referral = () => {
   return (
     <section
-      className="relative py-16 text-white"
+      className="relative py-16 text-white min-h-[70vh] flex items-center mt-16"
       style={{ backgroundColor: "#231F20" }}
     >
       {/* Zig-zag money emojis */}
@@ -12,7 +12,7 @@ const Referral = () => {
       <div className="absolute top-0 left-1/2 text-5xl">💰</div>
       <div className="absolute top-8 right-1/4 text-4xl">💵</div>
 
-      <div className="container mx-auto px-20">
+      <div className="container mx-auto px-32">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-around gap-2 lg:gap-4">
           {/* Text content */}
           <div className="w-full lg:w-1/2 text-center lg:text-left">

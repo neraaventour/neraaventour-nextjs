@@ -5,8 +5,8 @@ import boat from "../app/public/boat.svg"; // Replace with your actual icon
 
 const Forms = () => {
   return (
-    <section className="py-16 bg-gray-100">
-      <div className="container mx-auto px-4">
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-2">
         {/* Icon and Heading */}
         <div className="text-center mb-10">
           <Image
@@ -24,7 +24,7 @@ const Forms = () => {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16">
+          <div className="grid pl-2 md:grid-cols-2 gap-8 md:gap-16">
             {/* Contact Information */}
             <div className="grid grid-cols-2 gap-4 md:block">
               <div className="mb-8">
@@ -86,7 +86,7 @@ const Forms = () => {
               ></textarea>
               <button
                 type="submit"
-                className="w-full bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300"
+                className="w-full bg-[#4A96D0] text-white px-4 py-2 rounded-full hover:bg-[#3A45A2] transition duration-300"
               >
                 Send Message
               </button>
